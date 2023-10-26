@@ -1,0 +1,21 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "types/env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "src/apis/**/*",
+    "types/**/*.d.ts",
+    "vite/**/*.ts"
+  ],
+  // "lib": ["WebWorker", "DOM"],
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["element-plus/global"]
+  }
+}
