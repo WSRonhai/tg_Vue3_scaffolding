@@ -24,3 +24,7 @@ VITE_LOAD=true
 VITE_API_URL='https://xxx.pythl.com/'
 VITE_LOAD=true
 ```
+
+## 自动导入 vue 和 vue-router
+
+已配置自动导包

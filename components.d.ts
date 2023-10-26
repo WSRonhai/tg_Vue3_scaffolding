@@ -8,9 +8,19 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/es')['Button']
+    ARefree: typeof import('./src/components/refree/aRefree/ARefree.vue')['default']
+    DRefree: typeof import('./src/components/refree/dRefree/DRefree.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCalendar: typeof import('element-plus/es')['ElCalendar']
+    ERefree: typeof import('./src/components/refree/eRefree/ERefree.vue')['default']
+    EyeRefree: typeof import('./src/components/refree/eyeRefree/EyeRefree.vue')['default']
+    Login: typeof import('./src/components/Login.vue')['default']
+    MatchList: typeof import('./src/components/match/MatchList.vue')['default']
+    RefreeEmpty: typeof import('./src/components/common/RefreeEmpty.vue')['default']
+    RefreeRole: typeof import('./src/components/refree/refreeRole/RefreeRole.vue')['default']
+    RefreeRoleGroup: typeof import('./src/components/refree/refreeRole/RefreeRoleGroup.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScoreHeader: typeof import('./src/components/common/ScoreHeader.vue')['default']
   }
 }

@@ -13,7 +13,7 @@ export function info() {
 
 export function findPrograms() {
     return http.request<user>({
-        url: `projectCenter/website/noauth/findPrograms`
+        url: `/projectCenter/website/noauth/findPrograms`
     })
 }
 
