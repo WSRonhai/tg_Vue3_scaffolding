@@ -11,7 +11,7 @@ export default function setupPlugins(isBuild: boolean, env: ViteEnv) {
     // 1.自动导入 Vue 相关函数，如：ref, reactive, toRef 等
     plugins.push(
         AutoImport({
-            imports: ['vue', 'vue-router'],
+            imports: ['vue', 'vue-router', 'pinia'],
             // 生成自动导入的TS声明文件
             dts: "../../auto-import.d.ts",
         })
