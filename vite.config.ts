@@ -20,6 +20,14 @@ export default defineConfig(({ command, mode }): UserConfig => {
       // }
       alias,
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          javascriptEnabled: true,
+          additionalData: '@import "./src/assets/scss/variable.scss";',
+        },
+      },
+    },
     server: {
       host: '0.0.0.0',
       port: 5000

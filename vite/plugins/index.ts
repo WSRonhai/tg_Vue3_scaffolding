@@ -17,12 +17,12 @@ export default function setupPlugins(isBuild: boolean, env: ViteEnv) {
         })
     )
     // 2.注册antdv
-    // plugins.push(autoRegisterAntdV())
+    plugins.push(autoRegisterAntdV())
     // 3.自动注册Element-Plus
     // autoRegisterElementPlus().forEach(element => {
     //     plugins.push(element)
     // });
     //4.注册vant
-    plugins.push(autoRegisterVant())
+    // plugins.push(autoRegisterVant())
     return plugins
 } 
