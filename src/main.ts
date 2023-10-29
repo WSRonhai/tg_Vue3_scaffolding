@@ -4,21 +4,15 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import App from './App.vue'
 import router from './router'
 import '@/assets/scss/index.scss'
-// import { ConfigProvider } from 'vant';
-//vant样式
-// Toast
-// import 'vant/es/toast/style';
-// Dialog
-// import 'vant/es/dialog/style';
-// Notify
-// import 'vant/es/notify/style';
-// ImagePreview
-// import 'vant/es/image-preview/style';
-
+import registerVantStyle from '../vite/plugins/registerVantStyle'
+import { uiType } from '../vite/config'
 const app = createApp(App)
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
-// app.use(ConfigProvider);
+//注册vnat提示样式
+if (uiType == 2) {
+    registerVantStyle(app)
+}
 app.use(pinia)
 app.use(router)
 app.mount('#app')

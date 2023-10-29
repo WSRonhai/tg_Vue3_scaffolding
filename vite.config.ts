@@ -12,6 +12,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
 
   return {
     // plugins: [vue(),],
+    //注册 ui 组件1.antdv 2.element-plus 3 vant
     plugins: setupPlugins(isBuild, env),
     resolve: {
       // alias: {
@@ -19,6 +20,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
       // }
       alias,
     },
+    //引入基础变量
     css: {
       preprocessorOptions: {
         scss: {

@@ -4,11 +4,15 @@ import AutoImport from 'unplugin-auto-import/vite'
 import autoRegisterAntdV from './antdv'
 import autoRegisterElementPlus from './eleplus'
 import autoRegisterVant from './vant'
+import { uiType } from '../config' //选择ui库
+
 
 //插件集中管理,安装
 export default function setupPlugins(isBuild: boolean, env: ViteEnv) {
+  console.log('uiType', uiType);
+
   const plugins: Plugin[] = [vue()]
-  // 1.自动导入 Vue 相关函数，如：ref, reactive, toRef 等
+  // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
   plugins.push(
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia'],
@@ -16,13 +20,15 @@ export default function setupPlugins(isBuild: boolean, env: ViteEnv) {
       dts: '../../auto-import.d.ts',
     }),
   )
-  // 2.注册antdv
-  plugins.push(autoRegisterAntdV())
-  // 3.自动注册Element-Plus
-  // autoRegisterElementPlus().forEach(element => {
-  //     plugins.push(element)
-  // });
-  //4.注册vant
-  // plugins.push(autoRegisterVant())
+  //1.注册antdv  2.注册element-plus 3.注册vant组件
+  if (uiType == 0) {
+    plugins.push(autoRegisterAntdV())
+  } else if (uiType == 1) {
+    autoRegisterElementPlus().forEach(element => {
+      plugins.push(element)
+    });
+  } else if (uiType == 2) {
+    plugins.push(autoRegisterVant())
+  }
   return plugins
 }

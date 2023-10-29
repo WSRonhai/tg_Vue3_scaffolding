@@ -8,6 +8,9 @@ const hello = () => {
 
 <template>
   <div>hahah</div>
+  <!-- <el-button type="primary">Primary</el-button>
+  <van-button type="primary">主要按钮</van-button> -->
+  <a-button type="primary">Primary Button</a-button>
 </template>
 <style lang="scss" scoped>
 div {
