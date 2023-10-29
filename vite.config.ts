@@ -1,17 +1,16 @@
 import { UserConfig, defineConfig, loadEnv } from 'vite'
-import { parseEnv } from "./vite/utils";
-import alias from "./vite/alias";
-import setupPlugins from "./vite/plugins"
+import { parseEnv } from './vite/utils'
+import alias from './vite/alias'
+import setupPlugins from './vite/plugins'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }): UserConfig => {
-  const isBuild = command == "build";
-  const root = process.cwd();
+  const isBuild = command == 'build'
+  const root = process.cwd()
   const env = parseEnv(loadEnv(mode, root))
-  console.log('env', env);
+  console.log('env', env)
 
   return {
-
     // plugins: [vue(),],
     plugins: setupPlugins(isBuild, env),
     resolve: {
@@ -30,7 +29,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
     },
     server: {
       host: '0.0.0.0',
-      port: 5000
-    }
+      port: 5000,
+    },
   }
 })
