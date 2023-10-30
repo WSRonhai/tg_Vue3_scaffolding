@@ -1,8 +1,8 @@
 import axios, { type AxiosRequestConfig } from 'axios'
 import { uiType } from '../../../vite/config' //选择ui库
 import { ElMessage } from 'element-plus'
-import { message } from 'ant-design-vue';
-import { showToast } from 'vant';
+import { message } from 'ant-design-vue'
+import { showToast } from 'vant'
 class Axios {
   private instance
   constructor(config: AxiosRequestConfig) {
@@ -63,7 +63,7 @@ class Axios {
             break
         }
         if (uiType == 0) {
-          const [messageApi, contextHolder] = message.useMessage();
+          const [messageApi, contextHolder] = message.useMessage()
           messageApi.error(msg)
         } else if (uiType == 1) {
           ElMessage({
@@ -71,7 +71,7 @@ class Axios {
             message: msg,
           })
         } else if (uiType == 2) {
-          showToast(msg);
+          showToast(msg)
         }
         return Promise.reject(error)
       },

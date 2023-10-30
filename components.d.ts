@@ -9,13 +9,13 @@ declare module 'vue' {
   export interface GlobalComponents {
     AButton: (typeof import('ant-design-vue/es'))['Button']
     ElButton: (typeof import('element-plus/es'))['ElButton']
-    Hah: typeof import('./src/components/common/hah/index.vue')['default']
+    Hah: (typeof import('./src/components/common/hah/index.vue'))['default']
     Home: (typeof import('./src/components/svgIcons/home.vue'))['default']
     Index: (typeof import('./src/components/svgIcons/Index.vue'))['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
-    SvgIcons: typeof import('./src/components/common/svgIcons/index.vue')['default']
-    Test: typeof import('./src/components/common/test/index.vue')['default']
+    RouterLink: (typeof import('vue-router'))['RouterLink']
+    RouterView: (typeof import('vue-router'))['RouterView']
+    SvgIcons: (typeof import('./src/components/common/svgIcons/index.vue'))['default']
+    Test: (typeof import('./src/components/common/test/index.vue'))['default']
     VanButton: (typeof import('vant/es'))['Button']
   }
 }
