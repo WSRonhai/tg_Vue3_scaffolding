@@ -12,6 +12,9 @@
 
 ## 仓库使用 Pinia
 
+增加仓库数据自动本地保存
+插件:pinia-plugin-persistedstate
+
 ## 本地环境配置
 
 已实现本地配置类型转换和类型提示
@@ -45,3 +48,11 @@ VITE_LOAD=true
 'revert',//回滚到上一个版本
 'build',//编译相关的修改，例如发布版本、对项目构建或者依赖的改动
 ```
+
+## 公共组件自动注册
+
+## 增加scss和基础变量
+
+## 增加mock.js
+
+官方文档:https://github.com/vbenjs/vite-plugin-mock/tree/main#readme
