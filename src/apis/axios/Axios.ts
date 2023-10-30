@@ -1,5 +1,8 @@
 import axios, { type AxiosRequestConfig } from 'axios'
-
+import { uiType } from '../../../vite/config' //选择ui库
+import { ElMessage } from 'element-plus'
+import { message } from 'ant-design-vue';
+import { showToast } from 'vant';
 class Axios {
   private instance
   constructor(config: AxiosRequestConfig) {
@@ -40,6 +43,36 @@ class Axios {
         return response
       },
       (error) => {
+        let status = error.response.status
+        let msg = ''
+        switch (status) {
+          case 401:
+            msg = 'TOKEN过期'
+            break
+          case 403:
+            msg = '无权访问'
+            break
+          case 404:
+            msg = '请求地址错误'
+            break
+          case 500:
+            msg = '服务器故障,联系管理员'
+            break
+          default:
+            msg = '网络故障,请稍后重试'
+            break
+        }
+        if (uiType == 0) {
+          const [messageApi, contextHolder] = message.useMessage();
+          messageApi.error(msg)
+        } else if (uiType == 1) {
+          ElMessage({
+            type: 'error',
+            message: msg,
+          })
+        } else if (uiType == 2) {
+          showToast(msg);
+        }
         return Promise.reject(error)
       },
     )

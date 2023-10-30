@@ -14,7 +14,6 @@ const app = createApp(App)
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
 
-
 //注册vnat提示样式
 if (uiType == 2) {
   registerVantStyle(app)
