@@ -1,8 +1,7 @@
 import axios, { type AxiosRequestConfig } from 'axios'
-import { uiType } from '../../../vite/config' //选择ui库
-import { ElMessage } from 'element-plus'
 import { message } from 'ant-design-vue'
-import { showToast } from 'vant'
+
+
 class Axios {
   private instance
   constructor(config: AxiosRequestConfig) {
@@ -62,17 +61,8 @@ class Axios {
             msg = '网络故障,请稍后重试'
             break
         }
-        if (uiType == 0) {
-          const [messageApi, contextHolder] = message.useMessage()
-          messageApi.error(msg)
-        } else if (uiType == 1) {
-          ElMessage({
-            type: 'error',
-            message: msg,
-          })
-        } else if (uiType == 2) {
-          showToast(msg)
-        }
+        const [messageApi, contextHolder] = message.useMessage()
+        messageApi.error(msg)
         return Promise.reject(error)
       },
     )

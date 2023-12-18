@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { user, mock } from '@/apis/'
+const userinfo = await mock.get()
+console.log(111, userinfo)
+console.log(111, userinfo.data)
+</script>
 
 <template>
   <div class="home">

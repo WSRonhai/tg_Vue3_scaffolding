@@ -1,9 +1,5 @@
 import http from '@/apis/axios'
-export interface user {
-  name: string
-  age: number
-  avatar: string
-}
+import type { user } from './types'
 
 export function info() {
   return http.request<user>({

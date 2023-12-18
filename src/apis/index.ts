@@ -1,4 +1,4 @@
 import * as user from './module/user'
-import * as test from './module/test'
+import * as mock from './module/mock'
 
-export { user, test }
+export { user, mock }
