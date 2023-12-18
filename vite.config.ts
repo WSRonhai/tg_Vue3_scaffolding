@@ -23,9 +23,9 @@ export default defineConfig(({ command, mode }): UserConfig => {
     //引入基础变量
     css: {
       preprocessorOptions: {
-        scss: {
+        less: {
           javascriptEnabled: true,
-          additionalData: '@import "./src/assets/scss/variable.scss";',
+          additionalData: '@import "./src/assets/less/variable.less";',
         },
       },
     },

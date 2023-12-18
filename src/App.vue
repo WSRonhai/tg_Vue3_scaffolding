@@ -14,16 +14,6 @@ window.onload = function () {
 
 <template>
   <Suspense>
-    <!-- <van-config-provider theme="dark"> -->
     <RouterView />
-    <!-- </van-config-provider> -->
   </Suspense>
 </template>
-
-<style lang="scss" scoped>
-// body {
-//   padding: 0;
-//   margin: 0;
-//   height: 100%;
-// }
-</style>
