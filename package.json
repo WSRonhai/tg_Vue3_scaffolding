@@ -18,10 +18,8 @@
     "@vant/auto-import-resolver": "^1.0.2",
     "ant-design-vue": "^4.0.6",
     "axios": "^1.5.1",
-    "element-plus": "^2.4.1",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.0",
-    "vant": "^4.7.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },

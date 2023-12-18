@@ -1,10 +1,8 @@
-# 隆海 Vue3 + Typescript + Vite 脚手架
+# 糖谷vue3脚手架
+
+Vue3 + Typescript + Vite + Pinia 脚手架
 
 ## axios 封装
-
-## 按需加载 UI 组件
-
-在 Viteplugins 的 index.ts 中选择加载的 UI 组件注册即可，建议选择时只注册 Antdv 或 Element-Plus 中一个
 
 ## Tailwindcss
 
