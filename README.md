@@ -32,7 +32,10 @@ VITE_LOAD=true
 
 ## 自动格式化代码
 
-## 规定git commit -m 格式
+## husky引入
+
+规定git commit -m 格式
+示例：`git commit -m 'feat: xxx'`
 
 ```bash
 'feat',//新特性、新功能
@@ -48,8 +51,6 @@ VITE_LOAD=true
 ```
 
 ## 公共组件自动注册
-
-## 增加scss和基础变量
 
 ## 增加mock.js
 

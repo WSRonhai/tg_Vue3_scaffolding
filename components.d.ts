@@ -7,10 +7,10 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Hah: typeof import('./src/components/common/hah/index.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
-    SvgIcons: typeof import('./src/components/common/svgIcons/index.vue')['default']
-    Test: typeof import('./src/components/common/test/index.vue')['default']
+    Hah: (typeof import('./src/components/common/hah/index.vue'))['default']
+    RouterLink: (typeof import('vue-router'))['RouterLink']
+    RouterView: (typeof import('vue-router'))['RouterView']
+    SvgIcons: (typeof import('./src/components/common/svgIcons/index.vue'))['default']
+    Test: (typeof import('./src/components/common/test/index.vue'))['default']
   }
 }
