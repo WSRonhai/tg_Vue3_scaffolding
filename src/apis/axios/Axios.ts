@@ -1,27 +1,32 @@
 import axios, { type AxiosRequestConfig } from 'axios'
 import { message } from 'ant-design-vue'
 
-
 class Axios {
+
   private instance
   constructor(config: AxiosRequestConfig) {
     this.instance = axios.create(config)
     this.interceptors()
   }
+
   public async request<T, D = ResponseResult<T>>(
     config: AxiosRequestConfig,
-  ): Promise<D> {
-    try {
-      const response = await this.instance.request<D>(config)
-      return Promise.resolve(response.data)
-    } catch (error) {
-      return Promise.reject(error)
-    }
+  ) {
+    return new Promise<D>(async (resolve, reject) => {
+      try {
+        const response = await this.instance.request<D>(config)
+        resolve(response.data)
+      } catch (error) {
+        reject(error)
+      }
+    }) as Promise<D>
   }
+
   private interceptors() {
     this.interceptorsRequest()
     this.interceptorsResponse()
   }
+
   private interceptorsRequest() {
     // 添加请求拦截器
     this.instance.interceptors.request.use(
@@ -35,6 +40,7 @@ class Axios {
       },
     )
   }
+
   private interceptorsResponse() {
     // 添加响应拦截器
     this.instance.interceptors.response.use(

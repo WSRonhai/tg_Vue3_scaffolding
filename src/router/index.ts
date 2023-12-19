@@ -1,15 +1,43 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Login from '@/views/layout/Login.vue'
+import Dashboard from '@/views/layout/Dashboard.vue'
+import Settings from '@/views/layout/Settings.vue'
+
+import HomeView from '@/views/HomeView.vue'
+import Validate from '@/views/Validate.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+    },
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      name: 'dashboard',
+      component: Dashboard,
+      children: [
+        {
+          path: '/test',
+          name: 'HomeView',
+          component: HomeView,
+        },
+        {
+          path: '/validate',
+          name: 'Validate',
+          component: Validate,
+        },
+        {
+          path: '/settings',
+          name: 'Settings',
+          component: Settings,
+        },
+      ]
     },
-
     // {
     //   path: '/about',
     //   name: 'about',

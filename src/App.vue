@@ -14,6 +14,17 @@ window.onload = function () {
 
 <template>
   <Suspense>
-    <RouterView />
+    <a-config-provider
+      :theme="{
+        token: {
+          colorPrimary: '#00b96b',
+        },
+        Radio: {
+          colorPrimary: '#00b96b',
+        },
+      }"
+    >
+      <RouterView />
+    </a-config-provider>
   </Suspense>
 </template>

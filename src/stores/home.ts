@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { showDialog } from 'vant'
+
 interface teamType {
   id: number
   name: string
@@ -64,25 +64,14 @@ export const useHomeStore = defineStore(
     const selectTeam = (item: teamType) => {
       teamId.value = item.id
     }
-    const connect = () => {
-      console.log(teamId, ip, port)
-      showDialog({
-        title: '标题',
-        width: '300px',
-        theme: 'round-button',
-        message: `teamId:${teamId.value}, ip:${ip.value}, port:${port.value}`,
-        confirmButtonColor: '#FFA500',
-      }).then(() => {
-        // on close
-      })
-    }
+
     const reset = () => {
       teamId.value = 0
       ip.value = ''
       port.value = ''
     }
 
-    return { ip, port, teamId, teamList, selectTeam, connect, reset }
+    return { ip, port, teamId, teamList, selectTeam, reset }
   },
   {
     persist: true,

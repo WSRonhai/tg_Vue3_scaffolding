@@ -1,5 +1,5 @@
-export interface user {
-    name: string
-    age: number
-    avatar: string
+export interface User {
+  name: string
+  age: number
+  avatar: string
 }

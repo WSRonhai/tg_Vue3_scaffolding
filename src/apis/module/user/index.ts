@@ -1,14 +1,14 @@
 import http from '@/apis/axios'
-import type { user } from './types'
+import type { User } from './types'
 
 export function info() {
-  return http.request<user>({
+  return http.request<User>({
     url: 'info',
   })
 }
 
 export function findPrograms() {
-  return http.request<user>({
+  return http.request<User>({
     url: `/projectCenter/website/noauth/findPrograms`,
   })
 }

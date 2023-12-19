@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import { user, mock } from '@/apis/'
-const userinfo = await mock.get()
-console.log(111, userinfo)
-console.log(111, userinfo.data)
+const router = useRouter()
+const home = () => {
+  router.push('home')
+}
+const login = () => {
+  router.push('login')
+}
+const text = ref('https://www.antdv.com/')
 </script>
 
 <template>
@@ -12,11 +16,17 @@ console.log(111, userinfo.data)
     <test />
     <hah />
   </div>
+  <a-button type="primary" @click="home">Home</a-button>
+  <a-button @click="login">Login</a-button>
+  <hr />
+  <a-space direction="vertical" align="center">
+    <a-qrcode :value="text" />
+    <a-input v-model:value="text" placeholder="-" :maxlength="60" />
+  </a-space>
 </template>
 <style lang="less" scoped>
 .home {
   width: 100vw;
-  height: 100vh;
   background-color: #f1f1f1;
 }
 </style>

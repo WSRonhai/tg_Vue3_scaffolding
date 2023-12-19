@@ -8,7 +8,8 @@
     "types/**/*.d.ts",
     "vite/**/*.ts",
     // 自动导包配置，导入vue和vue-router
-    "./auto-imports.d.ts"
+    "./auto-imports.d.ts",
+    "src/**/*.vue"
   ],
   // "lib": ["WebWorker", "DOM"],
   "exclude": ["src/**/__tests__/*"],
@@ -17,7 +18,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    },
-    "types": ["element-plus/global"]
+    }
   }
 }
