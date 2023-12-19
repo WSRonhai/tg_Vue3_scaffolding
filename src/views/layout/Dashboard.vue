@@ -79,13 +79,15 @@ const logout = () => {
             </span>
           </template>
           <a-menu-item key="1">
-            <hamburger-button
-              theme="outline"
-              size="15"
-              fill="#fff"
-              style="margin-right: 10px"
-            />
-            <span>菜单管理</span>
+            <RouterLink :to="{ name: 'MenuList' }">
+              <hamburger-button
+                theme="outline"
+                size="15"
+                fill="#fff"
+                style="margin-right: 10px"
+              />
+              <span>菜单管理</span>
+            </RouterLink>
           </a-menu-item>
           <a-menu-item key="2">
             <data-user

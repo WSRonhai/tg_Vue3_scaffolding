@@ -11,7 +11,7 @@ import {
   Power,
   MenuUnfoldOne,
   MenuFoldOne,
-  Gastrointestinal
+  Gastrointestinal,
 } from '@icon-park/vue-next'
 
 const iconList = [

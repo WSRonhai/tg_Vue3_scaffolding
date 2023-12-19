@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '@/views/layout/Login.vue'
 import Dashboard from '@/views/layout/Dashboard.vue'
+import MenuList from '@/views/layout/MenuList.vue'
 import Settings from '@/views/layout/Settings.vue'
 
 import HomeView from '@/views/demo/HomeView.vue'
@@ -39,6 +40,11 @@ const router = createRouter({
           path: '/svgIcon',
           name: 'SvgIcon',
           component: SvgIcon,
+        },
+        {
+          path: '/menulist',
+          name: 'MenuList',
+          component: MenuList,
         },
       ],
     },
