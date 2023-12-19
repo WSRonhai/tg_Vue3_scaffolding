@@ -102,8 +102,8 @@ const onFinishFailed = (errorInfo: any) => {
   justify-content: center;
   align-items: center;
   .box {
-    width: 500px;
-    height: 600px;
+    width: 400px;
+    height: 450px;
     background-color: #fff;
     border-radius: 20px;
     padding: 50px;

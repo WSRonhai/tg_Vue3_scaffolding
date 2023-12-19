@@ -2,16 +2,13 @@ import axios, { type AxiosRequestConfig } from 'axios'
 import { message } from 'ant-design-vue'
 
 class Axios {
-
   private instance
   constructor(config: AxiosRequestConfig) {
     this.instance = axios.create(config)
     this.interceptors()
   }
 
-  public async request<T, D = ResponseResult<T>>(
-    config: AxiosRequestConfig,
-  ) {
+  public async request<T, D = ResponseResult<T>>(config: AxiosRequestConfig) {
     return new Promise<D>(async (resolve, reject) => {
       try {
         const response = await this.instance.request<D>(config)

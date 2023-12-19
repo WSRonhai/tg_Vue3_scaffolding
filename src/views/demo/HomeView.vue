@@ -1,21 +1,15 @@
 <script setup lang="ts">
 const router = useRouter()
 const home = () => {
-  router.push('home')
+  router.push('/')
 }
 const login = () => {
-  router.push('login')
+  router.push('/login/')
 }
-const text = ref('https://www.antdv.com/')
+const text = ref('https://www.tanghailong.com/')
 </script>
 
 <template>
-  <div class="home">
-    <h1>测试svg图标</h1>
-    <svgIcons :width="40" :height="40" color="green" name="logout" />
-    <test />
-    <hah />
-  </div>
   <a-button type="primary" @click="home">Home</a-button>
   <a-button @click="login">Login</a-button>
   <hr />

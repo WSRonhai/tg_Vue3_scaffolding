@@ -5,10 +5,10 @@ import App from './App.vue'
 import router from './router'
 import '@/assets/less/index.less'
 import gloalComponent from '@/components'
-import '@icon-park/vue-next/styles/index.css';
+import '@icon-park/vue-next/styles/index.css'
 
 //注册常用的iconpark图标
-import iconPark from '@/plugins/IconPark'
+import iconPark from '@/plugins/iconpark/'
 const app = createApp(App)
 iconPark(app)
 

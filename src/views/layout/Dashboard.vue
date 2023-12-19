@@ -9,7 +9,7 @@ interface Route {
 }
 const routes = ref<Route[]>([
   {
-    path: 'home',
+    path: '/',
     breadcrumbName: '首页',
   },
   {
@@ -118,17 +118,50 @@ const logout = () => {
               <span v-if="!collapsed">权限管理</span>
             </span>
           </template>
-          <a-menu-item key="6">权限列表</a-menu-item>
-          <a-menu-item key="8">Team 2</a-menu-item>
+          <a-menu-item key="4">权限列表</a-menu-item>
         </a-sub-menu>
-        <a-menu-item key="9">
-          <RouterLink to="/test/">测试</RouterLink>
-        </a-menu-item>
+        <a-sub-menu key="5">
+          <template #title>
+            <gastrointestinal
+              theme="filled"
+              size="15"
+              fill="#fff"
+              style="margin-right: 10px"
+            />
+            <span v-if="!collapsed">Demo</span>
+          </template>
+          <a-menu-item key="6">
+            <gastrointestinal
+              theme="filled"
+              size="15"
+              fill="#fff"
+              style="margin-right: 10px"
+            />
+            <span><RouterLink to="/validate/">Validate</RouterLink></span>
+          </a-menu-item>
+          <a-menu-item key="7">
+            <gastrointestinal
+              theme="filled"
+              size="15"
+              fill="#fff"
+              style="margin-right: 10px"
+            />
+            <span><RouterLink to="/test/">TestHome</RouterLink></span>
+          </a-menu-item>
+          <a-menu-item key="8">
+            <gastrointestinal
+              theme="filled"
+              size="15"
+              fill="#fff"
+              style="margin-right: 10px"
+            />
+            <span>
+              <RouterLink :to="{ name: 'SvgIcon' }">SvgIcon</RouterLink>
+            </span>
+          </a-menu-item>
+        </a-sub-menu>
         <a-menu-item key="10">
           <RouterLink to="/login/">Login</RouterLink>
-        </a-menu-item>
-        <a-menu-item key="11">
-          <RouterLink to="/validate/">Validate</RouterLink>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
@@ -201,7 +234,13 @@ const logout = () => {
           </div>
         </div>
       </a-layout-header>
-      <a-layout-content :style="{ margin: '24px 24px 0', overflow: 'initial' }">
+      <a-layout-content
+        :style="{
+          margin: '24px 24px 0',
+          overflow: 'initial',
+          overflowX: 'hidden',
+        }"
+      >
         <RouterView />
       </a-layout-content>
       <a-layout-footer style="text-align: center">糖谷管理系统</a-layout-footer>
@@ -230,6 +269,7 @@ const logout = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   .menu {
     display: flex;
     justify-content: flex-start;
