@@ -3,8 +3,8 @@ import Login from '@/views/layout/Login.vue'
 import Dashboard from '@/views/layout/Dashboard.vue'
 import MenuList from '@/views/layout/MenuList.vue'
 import Settings from '@/views/layout/Settings.vue'
+import HomeView from '@/views/layout/HomeView.vue'
 
-import HomeView from '@/views/demo/HomeView.vue'
 import SvgIcon from '@/views/demo/SvgIcon.vue'
 import Validate from '@/views/demo/Validate.vue'
 
@@ -22,7 +22,7 @@ const router = createRouter({
       component: Dashboard,
       children: [
         {
-          path: '/test',
+          path: '/home',
           name: 'HomeView',
           component: HomeView,
         },

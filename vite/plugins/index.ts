@@ -2,7 +2,6 @@ import vue from '@vitejs/plugin-vue'
 import type { Plugin } from 'vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import autoRegisterAntdV from './antdv'
-import autoRegisterIconPark from './iconpark'
 import autoRegisterSvgIcons from './svgIcon'
 import autoRegisterMockjs from './mock'
 

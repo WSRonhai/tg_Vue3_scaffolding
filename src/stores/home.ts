@@ -9,7 +9,7 @@ export const useHomeStore = defineStore(
   () => {
     const ip = ref('')
     const port = ref('')
-    const teamId = ref(0) as Ref<number>
+    // const teamId = ref(0) as Ref<number>
 
     const teamList: Array<teamType> = reactive([
       {
@@ -61,17 +61,9 @@ export const useHomeStore = defineStore(
         name: '12组',
       },
     ])
-    const selectTeam = (item: teamType) => {
-      teamId.value = item.id
-    }
 
-    const reset = () => {
-      teamId.value = 0
-      ip.value = ''
-      port.value = ''
-    }
 
-    return { ip, port, teamId, teamList, selectTeam, reset }
+    return { ip, port, teamList }
   },
   {
     persist: true,

@@ -10,6 +10,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
   const env = parseEnv(loadEnv(mode, root))
 
   return {
+    base: "/test/", // 关键代码
     // plugins: [vue(),],
     plugins: setupPlugins(isBuild, env),
     resolve: {

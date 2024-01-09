@@ -13,7 +13,7 @@ const routes = ref<Route[]>([
     breadcrumbName: '首页',
   },
   {
-    path: 'settings',
+    path: '/settings/',
     breadcrumbName: '权限列表',
   },
   {
@@ -21,9 +21,13 @@ const routes = ref<Route[]>([
     breadcrumbName: '增加权限',
   },
 ])
+const router = useRouter()
 const collapsed = ref<boolean>(false)
 
 const selectedKeys = ref<string[]>(['1'])
+const home = () => {
+  router.push({ name: 'HomeView' })
+}
 const logout = () => {
   console.log(111, 'logout')
 }
@@ -64,7 +68,7 @@ const logout = () => {
             fill="#fff"
             style="margin-right: 10px"
           />
-          <span v-if="!collapsed">首页</span>
+          <span v-if="!collapsed" @click="home">首页</span>
         </a-menu-item>
         <a-sub-menu key="sub1">
           <template #title>
@@ -141,15 +145,7 @@ const logout = () => {
             />
             <span><RouterLink to="/validate/">Validate</RouterLink></span>
           </a-menu-item>
-          <a-menu-item key="7">
-            <gastrointestinal
-              theme="filled"
-              size="15"
-              fill="#fff"
-              style="margin-right: 10px"
-            />
-            <span><RouterLink to="/test/">TestHome</RouterLink></span>
-          </a-menu-item>
+
           <a-menu-item key="8">
             <gastrointestinal
               theme="filled"
