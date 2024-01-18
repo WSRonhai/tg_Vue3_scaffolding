@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue'
 interface Route {
   path: string
   breadcrumbName: string
@@ -62,101 +63,39 @@ const logout = () => {
       </div>
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
         <a-menu-item key="0">
-          <home
-            theme="outline"
-            size="15"
-            fill="#fff"
-            style="margin-right: 10px"
-          />
+          <i class="bx bx-home-alt"></i>
           <span v-if="!collapsed" @click="home">首页</span>
         </a-menu-item>
         <a-sub-menu key="sub1">
           <template #title>
             <span>
-              <setting-two
-                theme="outline"
-                size="15"
-                fill="#fff"
-                style="margin-right: 10px"
-              />
+              <i class="bx bx-cog"></i>
               <span v-if="!collapsed">系统设置</span>
             </span>
           </template>
           <a-menu-item key="1">
             <RouterLink :to="{ name: 'MenuList' }">
-              <hamburger-button
-                theme="outline"
-                size="15"
-                fill="#fff"
-                style="margin-right: 10px"
-              />
+              <i class="bx bx-menu"></i>
               <span>菜单管理</span>
             </RouterLink>
           </a-menu-item>
           <a-menu-item key="2">
-            <data-user
-              theme="outline"
-              size="15"
-              fill="#fff"
-              style="margin-right: 10px"
-            />
+            <i class="bx bx-user"></i>
             <span>角色管理</span>
           </a-menu-item>
           <a-menu-item key="3">
-            <every-user
-              theme="outline"
-              size="15"
-              fill="#fff"
-              style="margin-right: 10px"
-            />
+            <i class="bx bxs-user-detail"></i>
             <span>用户管理</span>
           </a-menu-item>
         </a-sub-menu>
         <a-sub-menu key="sub2">
           <template #title>
             <span>
-              <permissions
-                theme="outline"
-                size="15"
-                fill="#fff"
-                style="margin-right: 10px"
-              />
+              <i class="bx bx-crown"></i>
               <span v-if="!collapsed">权限管理</span>
             </span>
           </template>
           <a-menu-item key="4">权限列表</a-menu-item>
-        </a-sub-menu>
-        <a-sub-menu key="5">
-          <template #title>
-            <gastrointestinal
-              theme="filled"
-              size="15"
-              fill="#fff"
-              style="margin-right: 10px"
-            />
-            <span v-if="!collapsed">Demo</span>
-          </template>
-          <a-menu-item key="6">
-            <gastrointestinal
-              theme="filled"
-              size="15"
-              fill="#fff"
-              style="margin-right: 10px"
-            />
-            <span><RouterLink to="/validate/">Validate</RouterLink></span>
-          </a-menu-item>
-
-          <a-menu-item key="8">
-            <gastrointestinal
-              theme="filled"
-              size="15"
-              fill="#fff"
-              style="margin-right: 10px"
-            />
-            <span>
-              <RouterLink :to="{ name: 'SvgIcon' }">SvgIcon</RouterLink>
-            </span>
-          </a-menu-item>
         </a-sub-menu>
         <a-menu-item key="10">
           <RouterLink to="/login/">Login</RouterLink>
@@ -168,23 +107,12 @@ const logout = () => {
       <a-layout-header style="background: #fff; padding: 0 24px">
         <div class="nav">
           <div class="menu" style="font-size: 20px">
-            <menu-fold-one
-              :strokeWidth="3"
-              theme="filled"
-              size="24"
-              fill="#515767"
+            <MenuUnfoldOutlined
               v-if="collapsed"
-              @click="() => (collapsed = !collapsed)"
-            />
-            <menu-unfold-one
-              :strokeWidth="3"
-              v-else
-              theme="filled"
-              size="24"
               fill="#515767"
               @click="() => (collapsed = !collapsed)"
             />
-
+            <MenuFoldOutlined v-else @click="() => (collapsed = !collapsed)" />
             <div>
               <a-breadcrumb
                 :routes="routes"
@@ -214,14 +142,14 @@ const logout = () => {
                 <a-menu>
                   <a-menu-item key="0">
                     <RouterLink to="/settings/">
-                      <user theme="outline" size="15" fill="#333" />
+                      <i class="bx bx-group"></i>
                       <span style="margin-left: 5px">个人中心</span>
                     </RouterLink>
                   </a-menu-item>
 
                   <a-menu-divider />
                   <a-menu-item key="3">
-                    <power theme="outline" size="15" fill="#333" />
+                    <i class="bx bx-log-out"></i>
                     <span style="margin-left: 5px" @click="logout">
                       退出登录
                     </span>
@@ -278,5 +206,8 @@ const logout = () => {
     justify-content: flex-end;
     align-items: center;
   }
+}
+.bx {
+  margin-right: 10px;
 }
 </style>

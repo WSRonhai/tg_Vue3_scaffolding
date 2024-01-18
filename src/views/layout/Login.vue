@@ -95,9 +95,7 @@ const onFinishFailed = (errorInfo: any) => {
 .bg {
   width: 100vw;
   height: 100vh;
-  background-image: url('@/assets/images/login.jpg');
-  background-size: 100vw 100vh;
-  background-repeat: no-repeat;
+  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;

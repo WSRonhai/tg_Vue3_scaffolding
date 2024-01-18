@@ -10,7 +10,10 @@ export default defineConfig(({ command, mode }): UserConfig => {
   const env = parseEnv(loadEnv(mode, root))
 
   return {
-    base: "/test/", // 关键代码
+    esbuild: {
+      drop: ['console', 'debugger'], // 删除 所有的console 和 debugger
+    },
+    // base: '/test/', // 关键代码
     // plugins: [vue(),],
     plugins: setupPlugins(isBuild, env),
     resolve: {

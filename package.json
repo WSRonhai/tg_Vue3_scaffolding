@@ -15,7 +15,7 @@
     "commitlint": "commitlint --config commitlint.config.cjs -e -V"
   },
   "dependencies": {
-    "@icon-park/vue-next": "^1.4.2",
+    "@ant-design/icons-vue": "^7.0.1",
     "@vee-validate/i18n": "^4.12.3",
     "@vee-validate/rules": "^4.12.3",
     "ant-design-vue": "^4.0.7",

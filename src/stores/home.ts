@@ -62,7 +62,6 @@ export const useHomeStore = defineStore(
       },
     ])
 
-
     return { ip, port, teamList }
   },
   {
