@@ -30,31 +30,51 @@ const router = createRouter({
           path: '/home',
           name: 'HomeView',
           component: HomeView,
-          meta: { role: ['admin', 'user', 'manager'], title: '首页', is_menu: true }
+          meta: {
+            role: ['admin', 'user', 'manager'],
+            title: '首页',
+            is_menu: true,
+          },
         },
         {
           path: '/validate',
           name: 'Validate',
           component: Validate,
-          meta: { role: ['admin', 'user', 'manager'], title: '校验', is_menu: false }
+          meta: {
+            role: ['admin', 'user', 'manager'],
+            title: '校验',
+            is_menu: false,
+          },
         },
         {
           path: '/settings',
           name: 'Settings',
           component: Settings,
-          meta: { role: ['admin', 'user', 'manager'], title: '系统设置', is_menu: true }
+          meta: {
+            role: ['admin', 'user', 'manager'],
+            title: '系统设置',
+            is_menu: true,
+          },
         },
         {
           path: '/svgIcon',
           name: 'SvgIcon',
           component: SvgIcon,
-          meta: { role: ['admin', 'user', 'manager'], title: 'icon设置', is_menu: false }
+          meta: {
+            role: ['admin', 'user', 'manager'],
+            title: 'icon设置',
+            is_menu: false,
+          },
         },
         {
           path: '/menulist',
           name: 'MenuList',
           component: MenuList,
-          meta: { role: ['admin', 'user', 'manager'], title: '菜单列表', is_menu: true }
+          meta: {
+            role: ['admin', 'user', 'manager'],
+            title: '菜单列表',
+            is_menu: true,
+          },
         },
       ],
     },

@@ -12,7 +12,6 @@ import '@/assets/css/boxicons.min.css'
 import '@/plugins/antdvIcon'
 const app = createApp(App)
 
-
 const pinia = createPinia()
 
 pinia.use(piniaPluginPersistedstate)
